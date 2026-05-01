@@ -1,0 +1,10 @@
+services:
+    Backend:
+      build: 
+        context: ./Backend
+        dockerfile: dockerfile
+      ports:
+        - "8080:3000"
+      volumes:
+        - ./Backend:/app
+        - /app/node_modules
