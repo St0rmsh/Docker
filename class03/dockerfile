@@ -1,0 +1,30 @@
+# Frontend 
+FROM node:20-alpine AS frontend
+
+WORKDIR /app
+
+COPY ./frontend/package*.json /app
+
+RUN npm install
+
+COPY ./frontend /app
+
+RUN npm run build
+
+
+
+# Fullstack
+
+FROM node:20-alpine 
+
+WORKDIR /app
+
+COPY ./backend/package*.json /app
+
+RUN npm install
+
+COPY ./backend /app
+
+COPY --from=frontend /app/dist /app/public
+
+CMD ["node","server.js"]
