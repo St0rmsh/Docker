@@ -1,0 +1,9 @@
+=> Capstone Project
+=> tiny Cat
+=> CICD
+=> kubernetes (ngnix, loadbalancer)
+=> microservices
+=> queues
+=> nextjs
+=> PWA
+=> Animations
